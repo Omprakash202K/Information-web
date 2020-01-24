@@ -1,21 +1,189 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <h3>This is my demo Project file for testing.</h3>
-   
-<h5> This is updated code by me. 24-01-2020 </h5>
-<h5> This is updated code by me. 24-01-2020 </h5>
-<h5> This is updated code by me. 24-01-2020 </h5>
-    <h5> This is updated code by me. 24-01-2020 </h5>
-    <h5> This is updated code by me. 24-01-2020 </h5>
-    <h5> This is updated code by me. 24-01-2020 </h5>
-    <h5> This is updated code by me. 24-01-2020 </h5>
-    <h5> This is updated code by me. 24-01-2020 </h5>
-</body>
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background: #545e63;
+        font-family: "Montserrat", sans-serif;
+      }
+      .box-1 {
+        width: 350px;
+        transition: 0.5s all;
+        border-radius: 4px;
+        position: relative;
+        height: 126px;    border: 10px solid #545e63;
+    outline: 3px solid #545e63;
+
+        background-color: #fff;
+        /* box-shadow: 0px 2px 4px 0px hsla(0, 0%, 0%, 0.2); */
+      }
+      .data-box p {
+        font-size: 12px;
+        font-weight: 600;
+      }
+      .data-box small {
+        font-size: 10px;
+        display: block;
+        margin-bottom: 18px;
+      }
+      .data-box span {
+        font-size: 11px;
+      }
+      
+      .box_swing img {
+        width: 100%;
+        height: 100%;
+      }
+      
+
+      .img-box {
+        width: 25%;
+        height: 100%;
+        float: left;
+      }
+      .img-box img {
+        height: 100%;
+        width: 100%;transition: 0.5s all;
+        border-radius: 2px 0px 0px 2px;
+      }
+      .data-box {
+        float: left;
+        width: 70%;
+        padding: 6px;
+      }
+ 
+      
+ 
+      
+     .x-axis {
+        animation: y-axis-animation 2s ease-in-out 0s infinite alternate;
+      }
+
+      @keyframes y-axis-animation {
+        from {
+          transform: rotateY(20deg);
+        }
+        to {
+          transform: rotateY(-20deg);
+        }
+      }  
+
+      .scene {
+        width: 350px;
+    height: 610px;
+    margin: 29px auto;
+    perspective: 2000px;
+      }
+
+      .square {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="scene center">
+      <div class="square x-axis">
+        <div class="box-1 a">
+          <div class="img-box">
+            <img
+              src="https://i.picsum.photos/id/1003/1181/1772.jpg"
+              alt="image1"
+            />
+          </div>
+          <div class="data-box">
+            <p>Lorem Ipsum is simply dummy text</p>
+            <small>printing and typesetting</small>
+            <span
+              >It has survived not only five centuries, but also the leap into
+              electronic</span
+            >
+          </div>
+        </div>
+        <div class="box-1 b">
+          <div class="img-box">
+            <img src="https://picsum.photos/seed/picsum/200/300" alt="image1" />
+          </div>
+          <div class="data-box">
+            <p>Lorem Ipsum is simply dummy text</p>
+            <small>printing and typesetting</small>
+            <span
+              >It has survived not only five centuries, but also the leap into
+              electronic</span
+            >
+          </div>
+        </div>
+        <div class="box-1 c">
+          <div class="img-box">
+            <img src="https://picsum.photos/200/300?grayscale" alt="image1" />
+          </div>
+          <div class="data-box">
+            <p>Lorem Ipsum is simply dummy text</p>
+            <small>printing and typesetting</small>
+            <span
+              >It has survived not only five centuries, but also the leap into
+              electronic</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+     <script>
+     setInterval(function() {
+        setTimeout(function() {
+          $(".a").addClass("aa");
+           
+           $(".b").removeClass("bb");
+
+          $(".c").removeClass("cc");
+         }, 200);
+        setTimeout(function() {
+           $(".a").removeClass("aa");
+          $(".b").addClass("bb");
+           $(".c").removeClass("cc");
+     }, 1000);
+       setTimeout(function() {
+          $(".a").removeClass("aa");
+        $(".c").addClass("cc");
+          $(".b").removeClass("bb");
+        }, 2000);
+      }, 3000);
+    </script> 
+
+    <style>
+      .aa {
+        border: 10px solid #545e63;
+  border-radius:4px;
+        margin-top: -20px;  transition: 0.5s all;
+        outline: 3px solid rgb(193, 136, 0);
+      }
+      .aa .img-box img, .bb .img-box img,.cc .img-box img{
+          margin: -50px -50px; border-radius:100px; width: 80px; height: 80px; background: #fff;
+          padding: 3px; transition: 0.5s all;
+      }
+
+      .bb {
+        border: 10px solid #545e63;
+        outline: 3px solid rgb(0, 132, 193);
+   border-radius:4px;
+  transition: 0.5s all;
+      }
+
+      .cc {     border: 10px solid #545e63;
+        outline: 3px solid rgb(74, 8, 196);
+   border-radius:4px; 
+        margin-top: -20px;  transition: 0.5s all;
+      }
+    </style>
+  </body>
 </html>
